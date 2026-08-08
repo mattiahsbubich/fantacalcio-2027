@@ -976,25 +976,39 @@ const auctionPairingSuggestions =
                       </div>
                     </div>
 
-                    <div className="auction-role-budget-status">
-                      <strong
-                        className={
-                          roleRemaining <
-                          0
-                            ? 'negative-value'
-                            : ''
-                        }
-                      >
-                        {
-                          roleRemaining
-                        }{' '}
-                        FM
-                      </strong>
+                <div className="auction-role-budget-status">
+                  <div className="auction-role-budget-line">
+                    <span>
+                      Previsti
+                    </span>
 
-                      <span>
-                        residui
-                      </span>
-                    </div>
+                    <strong>
+                      {roleBudget}
+                    </strong>
+                  </div>
+
+                  <div className="auction-role-budget-line">
+                    <span>
+                      Spesi
+                    </span>
+
+                    <strong>
+                      {roleSpent}
+                    </strong>
+                  </div>
+
+                  <div
+                    className={`auction-role-budget-difference ${
+                      roleSpent > roleBudget
+                        ? 'over-budget'
+                        : 'under-budget'
+                    }`}
+                  >
+                    {roleSpent > roleBudget
+                      ? `+${roleSpent - roleBudget} oltre`
+                      : `${roleBudget - roleSpent} disponibili`}
+                  </div>
+                </div>
                   </header>
 
                   <div className="auction-slot-list">

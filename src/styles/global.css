@@ -8795,3 +8795,76 @@ small {
       end !important;
   }
 }
+
+
+/* =========================
+   ASTA - BUDGET REPARTO
+   ========================= */
+
+.auction-role-budget-status {
+  display: grid;
+
+  gap: 3px;
+
+  min-width: 82px;
+
+  text-align: right;
+}
+
+.auction-role-budget-line {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 6px;
+}
+
+.auction-role-budget-line span {
+  color:
+    var(--text-muted);
+
+  font-size: 0.52rem;
+}
+
+.auction-role-budget-line strong {
+  color:
+    var(--text);
+
+  font-size: 0.72rem;
+  font-weight: 850;
+}
+
+.auction-role-budget-difference {
+  margin-top: 2px;
+
+  font-size: 0.56rem;
+  font-weight: 800;
+}
+
+.auction-role-budget-difference.under-budget {
+  color:
+    var(--success);
+}
+
+.auction-role-budget-difference.over-budget {
+  color:
+    var(--warning);
+}
+
+@media (max-width: 430px) {
+  .auction-role-budget-status {
+    min-width: 76px;
+  }
+
+  .auction-role-budget-line span {
+    font-size: 0.48rem;
+  }
+
+  .auction-role-budget-line strong {
+    font-size: 0.68rem;
+  }
+
+  .auction-role-budget-difference {
+    font-size: 0.51rem;
+  }
+}
