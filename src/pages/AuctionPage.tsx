@@ -1316,54 +1316,58 @@ const auctionPairingSuggestions =
         />
       </label>
 
-      {searchResults.length >
-        0 &&
-        !selectedPlayer && (
-          <div className="auction-search-results">
-            {searchResults.map(
-              (player) => (
-                <button
-                  key={
-                    player.id
-                  }
-                  type="button"
-                  onClick={() =>
-                    choosePlayer(
-                      player
-                    )
-                  }
-                >
-                  <span
-                    className={`role-avatar role-${player.role.toLowerCase()}`}
-                  >
-                    {
-                      player.role
-                    }
-                  </span>
+{searchResults.length > 0 &&
+  !selectedPlayer && (
+    <div className="auction-inline-search-results">
+      {searchResults.map(
+        (player) => (
+          <button
+            key={player.id}
+            type="button"
+            className="auction-inline-search-result"
+            onPointerDown={(event) => {
+              /*
+               * Su Safari iPhone il pointerDown
+               * arriva prima del blur dell'input.
+               * In questo modo la selezione non
+               * viene persa quando la tastiera
+               * è aperta.
+               */
+              event.preventDefault();
 
-                  <span>
-                    <strong>
-                      {
-                        player.name
-                      }
-                    </strong>
+              choosePlayer(
+                player
+              );
+            }}
+          >
+            <span
+              className={`role-avatar role-${player.role.toLowerCase()}`}
+            >
+              {player.role}
+            </span>
 
-                    <small>
-                      {
-                        player.team
-                      }{' '}
-                      · Quot.{' '}
-                      {
-                        player.listPrice
-                      }{' '}
-                      FM
-                    </small>
-                  </span>
-                </button>
-              )
-            )}
-          </div>
-        )}
+            <span className="auction-inline-result-info">
+              <strong>
+                {player.name}
+              </strong>
+
+              <small>
+                {player.team}
+                {' · '}
+                Quot.{' '}
+                {player.listPrice}{' '}
+                FM
+              </small>
+            </span>
+
+            <span className="auction-inline-result-select">
+              +
+            </span>
+          </button>
+        )
+      )}
+    </div>
+  )}
     </div>
 
     {selectedPlayer && (

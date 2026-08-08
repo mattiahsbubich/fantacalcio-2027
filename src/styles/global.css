@@ -8397,3 +8397,401 @@ strong {
     font-size: 0.78rem !important;
   }
 }
+
+
+
+/* =========================================================
+   ASTA MOBILE - RISULTATI INLINE
+   ========================================================= */
+
+.auction-inline-search-results {
+  position: static !important;
+
+  display: grid !important;
+
+  width: 100% !important;
+
+  max-height: 240px !important;
+
+  gap: 6px !important;
+
+  margin: 8px 0 12px !important;
+
+  padding: 6px !important;
+
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+
+  border:
+    1px solid
+    rgba(139, 124, 255, 0.2) !important;
+
+  border-radius: 15px !important;
+
+  background:
+    #0a0f1b !important;
+
+  box-shadow:
+    0 12px 28px
+    rgba(0, 0, 0, 0.3) !important;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.auction-inline-search-result {
+  position: static !important;
+
+  display: grid !important;
+
+  grid-template-columns:
+    38px
+    minmax(0, 1fr)
+    32px !important;
+
+  align-items: center !important;
+
+  gap: 10px !important;
+
+  width: 100% !important;
+  min-height: 58px !important;
+
+  padding:
+    8px 9px !important;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.06) !important;
+
+  border-radius: 11px !important;
+
+  color:
+    var(--text) !important;
+
+  background:
+    #101522 !important;
+
+  text-align: left !important;
+
+  touch-action: manipulation !important;
+
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.auction-inline-search-result:active {
+  border-color:
+    rgba(139, 124, 255, 0.35) !important;
+
+  background:
+    rgba(139, 124, 255, 0.12) !important;
+}
+
+.auction-inline-search-result
+.role-avatar {
+  width: 38px !important;
+  height: 38px !important;
+
+  min-width: 38px !important;
+
+  padding: 0 !important;
+
+  display: grid !important;
+  place-items: center !important;
+
+  border-radius: 11px !important;
+}
+
+.auction-inline-result-info {
+  min-width: 0 !important;
+}
+
+.auction-inline-result-info
+strong,
+.auction-inline-result-info
+small {
+  display: block !important;
+}
+
+.auction-inline-result-info
+strong {
+  color:
+    var(--text) !important;
+
+  font-size: 0.82rem !important;
+}
+
+.auction-inline-result-info
+small {
+  margin-top: 3px !important;
+
+  color:
+    var(--text-muted) !important;
+
+  font-size: 0.61rem !important;
+}
+
+.auction-inline-result-select {
+  display: grid !important;
+
+  width: 30px !important;
+  height: 30px !important;
+
+  place-items: center !important;
+
+  border-radius: 50% !important;
+
+  color:
+    var(--accent-strong) !important;
+
+  background:
+    rgba(139, 124, 255, 0.12) !important;
+
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+}
+
+
+/* Il campo prezzo viene SEMPRE dopo i risultati */
+
+.auction-player-search {
+  position: static !important;
+
+  overflow: visible !important;
+}
+
+.auction-slot-editor
+.form-field {
+  position: relative !important;
+
+  z-index: auto !important;
+}
+
+
+
+/* =========================================================
+   FASCE - MOBILE LAYOUT 2 RIGHE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .tiers-page
+  .strategy-player-summary {
+    display: grid !important;
+
+    grid-template-columns:
+      44px
+      minmax(0, 1fr)
+      30px !important;
+
+    grid-template-areas:
+      "avatar name expand"
+      "prices prices prices" !important;
+
+    align-items: center !important;
+
+    gap:
+      8px 10px !important;
+
+    width: 100% !important;
+
+    padding:
+      11px 10px !important;
+
+    overflow: visible !important;
+  }
+
+
+  /* AVATAR */
+
+  .tiers-page
+  .strategy-player-summary
+  .role-avatar {
+    grid-area: avatar !important;
+
+    width: 42px !important;
+    height: 42px !important;
+
+    min-width: 42px !important;
+  }
+
+
+  /* NOME */
+
+  .tiers-page
+  .strategy-player-name {
+    grid-area: name !important;
+
+    min-width: 0 !important;
+  }
+
+  .tiers-page
+  .strategy-player-name
+  small {
+    font-size: 0.6rem !important;
+  }
+
+  .tiers-page
+  .strategy-player-name
+  strong {
+    margin-top: 2px !important;
+
+    font-size: 0.86rem !important;
+
+    white-space: nowrap !important;
+
+    overflow: hidden !important;
+
+    text-overflow:
+      ellipsis !important;
+  }
+
+
+  /* + / - */
+
+  .tiers-page
+  .strategy-expand-icon {
+    grid-area: expand !important;
+
+    justify-self: end !important;
+
+    width: 30px !important;
+    height: 30px !important;
+
+    display: grid !important;
+
+    place-items: center !important;
+
+    border-radius: 50% !important;
+
+    color:
+      var(--accent-strong) !important;
+
+    background:
+      rgba(
+        139,
+        124,
+        255,
+        0.12
+      ) !important;
+  }
+
+
+  /*
+   * I due strategy-price-box
+   * sono i due elementi consecutivi
+   * Prezzo e Budget.
+   */
+
+  .tiers-page
+  .strategy-price-box {
+    width: auto !important;
+
+    min-width: 0 !important;
+
+    padding:
+      7px 10px !important;
+
+    border:
+      1px solid
+      rgba(
+        255,
+        255,
+        255,
+        0.07
+      ) !important;
+
+    border-radius:
+      10px !important;
+
+    background:
+      rgba(
+        255,
+        255,
+        255,
+        0.025
+      ) !important;
+  }
+
+
+  /*
+   * Facciamo diventare la seconda
+   * riga una mini griglia 2 colonne.
+   */
+
+  .tiers-page
+  .strategy-player-summary {
+    position: relative !important;
+  }
+
+  .tiers-page
+  .strategy-price-box:nth-of-type(1) {
+    grid-area: prices !important;
+
+    width:
+      calc(50% - 4px) !important;
+
+    justify-self:
+      start !important;
+  }
+
+  .tiers-page
+  .strategy-price-box:nth-of-type(2) {
+    grid-area: prices !important;
+
+    width:
+      calc(50% - 4px) !important;
+
+    justify-self:
+      end !important;
+  }
+
+
+  .tiers-page
+  .strategy-price-box
+  small {
+    font-size:
+      0.55rem !important;
+
+    text-align:
+      left !important;
+  }
+
+  .tiers-page
+  .strategy-price-box
+  strong {
+    margin-top:
+      3px !important;
+
+    font-size:
+      0.82rem !important;
+
+    text-align:
+      left !important;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .tiers-page
+  .strategy-price-box--price {
+    grid-area: prices !important;
+
+    width:
+      calc(50% - 4px) !important;
+
+    justify-self:
+      start !important;
+  }
+
+  .tiers-page
+  .strategy-price-box--budget {
+    grid-area: prices !important;
+
+    width:
+      calc(50% - 4px) !important;
+
+    justify-self:
+      end !important;
+  }
+}

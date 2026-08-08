@@ -970,28 +970,27 @@ const [
                                 </strong>
                               </span>
 
-                              <span className="strategy-price-box">
-                                <small>
-                                  Prezzo
-                                </small>
+                            <span className="strategy-price-box strategy-price-box--price">
+                              <small>
+                                Prezzo
+                              </small>
 
-                                <strong>
-                                  {credits ??
-                                    '—'}
-                                </strong>
-                              </span>
+                              <strong>
+                                {credits ?? '—'}
+                              </strong>
+                            </span>
 
-                              <span className="strategy-price-box">
-                                <small>
-                                  Budget
-                                </small>
+                            <span className="strategy-price-box strategy-price-box--budget">
+                              <small>
+                                Budget
+                              </small>
 
-                                <strong>
-                                  {profile.percentage ??
-                                    '—'}
-                                  %
-                                </strong>
-                              </span>
+                              <strong>
+                                {profile.percentage ??
+                                  '—'}
+                                %
+                              </strong>
+                            </span>
 
                               <span className="strategy-expand-icon">
                                 {expanded
