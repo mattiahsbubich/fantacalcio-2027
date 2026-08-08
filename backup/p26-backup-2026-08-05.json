@@ -1,0 +1,13 @@
+{
+  "app": "P26",
+  "version": 1,
+  "exportedAt": "2026-08-05T09:46:49.138Z",
+  "data": {
+    "p26-custom-activities": "[]",
+    "p26-completed-activities": "[]",
+    "p26-day-plans": "[{\"date\":\"2026-08-09\",\"selectedWind\":\"tramontana\",\"activityIds\":[]},{\"date\":\"2026-08-10\",\"selectedWind\":\"variabile\",\"activityIds\":[]},{\"date\":\"2026-08-11\",\"selectedWind\":\"variabile\",\"activityIds\":[]},{\"date\":\"2026-08-12\",\"selectedWind\":\"variabile\",\"activityIds\":[]},{\"date\":\"2026-08-13\",\"selectedWind\":\"variabile\",\"activityIds\":[]}]",
+    "p26-activity-reviews": "[{\"id\":\"d48300a7-a2b9-4767-85e9-f79a4259fb3c\",\"activityId\":\"4217f5af-de94-4079-9f6f-c76325e41ee7\",\"visitedAt\":\"2026-08-05T09:33:01.591Z\",\"categories\":[{\"id\":\"walk-0\",\"label\":\"Paesaggio\",\"score\":6},{\"id\":\"walk-1\",\"label\":\"Piacevolezza\",\"score\":6},{\"id\":\"walk-2\",\"label\":\"Accessibilità\",\"score\":6},{\"id\":\"walk-3\",\"label\":\"Tranquillità\",\"score\":6},{\"id\":\"walk-4\",\"label\":\"Esperienza\",\"score\":6}],\"note\":\"\"}]",
+    "p26-selected-wind": "tramontana",
+    "p26-visited-beaches": "[]"
+  }
+}
