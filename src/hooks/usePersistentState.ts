@@ -9,7 +9,10 @@ import {
 export function usePersistentState<T>(
   storageKey: string,
   initialValue: T
-): [T, Dispatch<SetStateAction<T>>] {
+): [
+  T,
+  Dispatch<SetStateAction<T>>
+] {
   const [value, setInternalValue] =
     useState<T>(() => {
       try {
@@ -18,7 +21,9 @@ export function usePersistentState<T>(
             storageKey
           );
 
-        if (storedValue === null) {
+        if (
+          storedValue === null
+        ) {
           return initialValue;
         }
 
@@ -27,7 +32,7 @@ export function usePersistentState<T>(
         ) as T;
       } catch (error) {
         console.error(
-          `Errore durante la lettura di "${storageKey}".`,
+          `Errore lettura "${storageKey}"`,
           error
         );
 
@@ -35,61 +40,71 @@ export function usePersistentState<T>(
       }
     });
 
-  const setValue: Dispatch<
-    SetStateAction<T>
-  > = useCallback(
-    (nextValue) => {
-      setInternalValue(
-        (currentValue) => {
-          const resolvedValue =
-            typeof nextValue ===
-            'function'
-              ? (
-                  nextValue as (
-                    previousValue: T
-                  ) => T
-                )(currentValue)
-              : nextValue;
+  const setValue:
+    Dispatch<
+      SetStateAction<T>
+    > = useCallback(
+      (nextValue) => {
+        setInternalValue(
+          (currentValue) => {
+            const resolvedValue =
+              typeof nextValue ===
+              'function'
+                ? (
+                    nextValue as (
+                      previousValue: T
+                    ) => T
+                  )(
+                    currentValue
+                  )
+                : nextValue;
 
-          try {
-            window.localStorage.setItem(
-              storageKey,
-              JSON.stringify(
-                resolvedValue
-              )
-            );
-          } catch (error) {
-            console.error(
-              `Errore durante il salvataggio di "${storageKey}".`,
-              error
-            );
+            try {
+              const serialized =
+                JSON.stringify(
+                  resolvedValue
+                );
+
+              window.localStorage.setItem(
+                storageKey,
+                serialized
+              );
+            } catch (error) {
+              console.error(
+                `Errore salvataggio "${storageKey}"`,
+                error
+              );
+            }
+
+            return resolvedValue;
           }
-
-          return resolvedValue;
-        }
-      );
-    },
-    [storageKey]
-  );
+        );
+      },
+      [storageKey]
+    );
 
   useEffect(() => {
     function handleStorage(
       event: StorageEvent
     ) {
       if (
-        event.key !== storageKey ||
-        event.newValue === null
+        event.key !==
+          storageKey ||
+        event.newValue ===
+          null
       ) {
         return;
       }
 
       try {
         setInternalValue(
-          JSON.parse(event.newValue) as T
+          JSON.parse(
+            event.newValue
+          ) as T
         );
       } catch (error) {
         console.error(
-          `Errore durante la sincronizzazione di "${storageKey}".`,
+          `Errore sincronizzazione "${storageKey}"`,
           error
         );
       }
@@ -108,5 +123,8 @@ export function usePersistentState<T>(
     };
   }, [storageKey]);
 
-  return [value, setValue];
+  return [
+    value,
+    setValue
+  ];
 }
