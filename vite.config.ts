@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
-const repositoryName = 'fantacalcio-27';
+const repositoryName = 'fantacalcio-2027';
 
 export default defineConfig({
   base: `/${repositoryName}/`,
@@ -20,26 +20,18 @@ export default defineConfig({
 
       manifest: {
         name: 'Fantacalcio 2026/27',
-
         short_name: 'Fantacalcio',
-
         description:
           'Assistente personale offline per il fantacalcio 2026/27.',
 
         theme_color: '#060810',
-
         background_color: '#060810',
 
         display: 'standalone',
+        orientation: 'portrait-primary',
 
-        orientation:
-          'portrait-primary',
-
-        start_url:
-          `/${repositoryName}/`,
-
-        scope:
-          `/${repositoryName}/`,
+        start_url: `/${repositoryName}/`,
+        scope: `/${repositoryName}/`,
 
         icons: [
           {
@@ -47,13 +39,11 @@ export default defineConfig({
             sizes: '192x192',
             type: 'image/png'
           },
-
           {
             src: 'pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png'
           },
-
           {
             src: 'pwa-512x512.png',
             sizes: '512x512',
@@ -64,9 +54,7 @@ export default defineConfig({
       },
 
       workbox: {
-        navigateFallback:
-          'index.html',
-
+        navigateFallback: 'index.html',
         globPatterns: [
           '**/*.{js,css,html,ico,png,svg,webmanifest}'
         ]
